@@ -4,7 +4,7 @@ COPY package.json ./
 COPY package-lock.json ./
 COPY ./ ./
 RUN npm i
-RUN npm build
+RUN npm run build
 CMD ["npm", "run", "start"]
 
 EXPOSE 80
