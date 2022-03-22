@@ -39,3 +39,13 @@ a {
     opacity: 1;
     transition: opacity 0.25s cubic-bezier(0.39, 0.575, 0.565, 1);
   }
+
+.btn-back {
+  line-height: 20px;
+  vertical-align: middle;
+}
+
+.btn-back svg {
+  display: inline-block;
+  width: 20px;
+}
