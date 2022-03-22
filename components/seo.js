@@ -4,11 +4,14 @@ import { GlobalContext } from "../pages/_app";
 import { getStrapiMedia } from "../src/media";
 
 const Seo = ({ seo }) => {
-  const { defaultSeo, siteName } = useContext(GlobalContext);
+  const { defaultSeo, siteName = '' } = useContext(GlobalContext);
   const seoWithDefaults = {
     ...defaultSeo,
     ...seo,
+    metaTitle: seo.meta_title || '',
+    metaDescription: seo.meta_description || '', 
   };
+  
   const fullSeo = {
     ...seoWithDefaults,
     // Add title suffix
