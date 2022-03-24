@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { ROUTE_CATEGORY } from "../constants/router";
 
 const CategoryNavigation = ({ categories }) => {
   return (
@@ -19,7 +20,7 @@ const CategoryNavigation = ({ categories }) => {
             {categories.map((category) => {
               return (
                 <li key={category.id}>
-                  <Link href={`/category?id=${category.id}`}>
+                  <Link href={`${ROUTE_CATEGORY}/${category.id}`}>
                     <a className="uk-link-reset">{category.name}</a>
                   </Link>
                 </li>

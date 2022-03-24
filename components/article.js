@@ -1,10 +1,11 @@
 import React from "react";
 import Link from "next/link";
 import NextImage from "./image";
+import { ROUTE_ARTICLE } from "../constants/router";
 
 const Article = ({ article }) => {
   return (
-    <Link href={`/article?id=${article.id}`}>
+    <Link href={`${ROUTE_ARTICLE}/${article.id}`}>
       <a className="uk-link-reset">
         <div className="uk-card uk-card-muted">
           <div className="uk-card-media-top">
