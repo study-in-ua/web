@@ -12,6 +12,11 @@ const CategoryNavigation = ({ categories }) => {
                 <a>Study.In.UA</a>
               </Link>
             </li>
+            <li>
+              <Link href="/shedule">
+                <a>Shedule</a>
+              </Link>
+            </li>
           </ul>
         </div>
         <div className="uk-navbar-right">
