@@ -8,14 +8,11 @@ const ArticleList = ({ articles }) => {
 
   return (
     <div>
-      <div className="uk-child-width-1-2@s" data-uk-grid="true">
+      <div className="articles">
         <div>
           {leftArticles.map((article, i) => {
             return (
-              <Article
-                article={article}
-                key={`article__left__${article.id}`}
-              />
+              <Article article={article} key={`article__left__${article.id}`} />
             );
           })}
         </div>
