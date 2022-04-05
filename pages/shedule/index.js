@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "reactstrap";
-import MeetingsList from "../components/meetings_list";
-import { fetchAPI } from "../src/api";
+import MeetingsList from "../../components/schedule/MeetingsList";
+import { fetchAPI } from "../../src/api";
 
 const Schedule = ({ meetings }) => {
   return (

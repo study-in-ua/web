@@ -1,12 +1,12 @@
 import React from "react";
 import { Container } from "reactstrap";
-import ArticleList from "../components/article_list";
+import ArticleList from "../components/articles/ArticleList";
 import { fetchAPI } from "../src/api";
 
 const Home = ({ articles, homepage }) => {
   return (
     <Container>
-      <h1>{homepage.title}</h1>
+      <h1 className="main-title">{homepage.title}</h1>
       <ArticleList articles={articles} />
     </Container>
   );

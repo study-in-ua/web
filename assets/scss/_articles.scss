@@ -1,5 +1,40 @@
 .articles {
-.article {
-    
+  &-list {
+    &-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0 0 8px;
+    }
+    a {
+      display: block;
+      font-size: 14px;
+      line-height: 1.2;
+      margin: 0 0 6px;
+    }
+  }
 }
+
+.article {
+  &.card {
+    padding: 0;
+  }
+
+  &-content {
+    padding: 1rem 1.5rem;
+    font-size: 16px;
+  }
+
+  &-categories {
+    a {
+      margin: 0 0 8px;
+    }
+  }
+  &-category {
+    font-size: 14px;
+    display: inline-block;
+  }
+
+  &-image {
+    max-height: 258px;
+  }
 }

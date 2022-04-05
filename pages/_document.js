@@ -4,13 +4,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head>
-          {/* eslint-disable-next-line */}
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Staatliches"
-          />
-        </Head>
+        <Head>{/* eslint-disable-next-line */}</Head>
         <body>
           <Main />
           <NextScript />
