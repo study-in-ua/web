@@ -18,7 +18,7 @@ export function getURL(path = "") {
  * @param {Object} options Options passed to fetch
  * @returns Parsed API call response
  */
-export async function fetchAPI(path, urlParamsObject = [], options = {}) {
+export async function fetchAPI(path, fields = [], filters=[],  options = {}) {
   // Merge default and user options
   const mergedOptions = {
     headers: {
@@ -28,9 +28,10 @@ export async function fetchAPI(path, urlParamsObject = [], options = {}) {
   };
 
   // Build request URL
-  const queryString = `fields=${urlParamsObject.join()}`;
+  const fieldsQuery = `fields=${fields.join()}`;
+  const filtersQuery = filters.length ? filters.map(i => "filter" + i).join("&") : "";
   const requestUrl = `${getURL(
-    `/items${path}${queryString ? `?${queryString}` : ""}`
+    `/items${path}${fields.length ? `?${[fieldsQuery,filtersQuery].join("&")}` : ""}`
   )}`;
   // Trigger API call
   const response = await fetch(requestUrl, mergedOptions);

@@ -1,34 +1,43 @@
 import React from "react";
 import Link from "next/link";
-import { ROUTE_CATEGORY } from "../constants/router";
+import CalendarIcon from "../components/icons/Calendar";
+import { Container } from "reactstrap";
+import { ROUTE_CATEGORY, ROUTE_SCHEDULE } from "constants/router";
 
 const CategoryNavigation = ({ categories }) => {
   return (
-    <div>
-      <nav className="uk-navbar-container" data-uk-navbar>
-        <div className="uk-navbar-left">
+    <div className="header">
+      <Container>
+        <nav className="header">
+          <Link href="/">
+            <a className="logo">Study.In.UA</a>
+          </Link>
+
           <ul className="uk-navbar-nav">
             <li>
-              <Link href="/">
-                <a>Study.In.UA</a>
+              <Link href={ROUTE_SCHEDULE}>
+                <a>
+                  <CalendarIcon />
+                  Shedule
+                </a>
               </Link>
             </li>
           </ul>
-        </div>
-        <div className="uk-navbar-right">
-          <ul className="uk-navbar-nav">
+
+          <ul className="aside-nav">
             {categories.map((category) => {
+              const { id, name } = category;
               return (
-                <li key={category.id}>
-                  <Link href={`${ROUTE_CATEGORY}/${category.id}`}>
-                    <a className="uk-link-reset">{category.name}</a>
+                <li key={id}>
+                  <Link href={`${ROUTE_CATEGORY}/${id}`}>
+                    <a className="uk-link-reset">{name}</a>
                   </Link>
                 </li>
               );
             })}
           </ul>
-        </div>
-      </nav>
+        </nav>
+      </Container>
     </div>
   );
 };

@@ -1,0 +1,42 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #edf3f6;
+  color: $dark;
+  padding: 70px 0 0;
+  color: $dark;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 120px;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 700;
+}
+
+img:hover {
+  opacity: 1;
+  transition: opacity 0.25s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.btn-back {
+  line-height: 20px;
+  vertical-align: middle;
+}
+
+.btn-back svg {
+  display: inline-block;
+  width: 20px;
+}
+
+.main-title {
+  font-size: 54px;
+  margin: 0 0 30px;
+}

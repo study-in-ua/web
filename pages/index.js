@@ -1,23 +1,21 @@
 import React from "react";
-import ArticleList from "../components/article_list";
+import { Container } from "reactstrap";
+import ArticleList from "../components/articles/ArticleList";
 import { fetchAPI } from "../src/api";
 
 const Home = ({ articles, homepage }) => {
   return (
-      <div className="uk-section">
-        <div className="uk-container uk-container-large">
-          <h1>{homepage.title}</h1>
-          <ArticleList articles={articles} />
-        </div>
-      </div>
+    <Container>
+      <h1 className="main-title">{homepage.title}</h1>
+      <ArticleList articles={articles} />
+    </Container>
   );
 };
 
 export async function getServerSideProps() {
-
   // Run API calls in parallel
   const [articlesRes, homepageRes] = await Promise.all([
-    fetchAPI("/articles", ["*", "category.*"] ),
+    fetchAPI("/articles", ["*", "category.*"]),
     fetchAPI("/homepage", ["title"]),
   ]);
 
@@ -25,7 +23,7 @@ export async function getServerSideProps() {
     props: {
       articles: articlesRes.data,
       homepage: homepageRes.data,
-    }
+    },
   };
 }
 

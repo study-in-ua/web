@@ -1,0 +1,42 @@
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  display: flex;
+
+  .logo {
+    font-size: 24px;
+    line-height: 1;
+    margin: 0 24px 0 0;
+    display: inline-block;
+    color: $dark;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      display: inline-block;
+    }
+  }
+
+  .aside-nav {
+    margin-left: auto;
+  }
+
+  a {
+    color: $primary;
+    display: inline-block;
+    padding: 16px 13px;
+
+    svg {
+      display: inline-block;
+      margin: 0 6px 0 0;
+    }
+  }
+}
