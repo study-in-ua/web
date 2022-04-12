@@ -9,7 +9,7 @@ const Article = ({ article }) => {
 
   return (
     <Container>
-      <Link href={`${ROUTE_SCHEDULE}?articleId=${article.id}`}>Shedule</Link>
+      <Link href={`${ROUTE_SCHEDULE}?articleId=${article.id}`}>Schedule</Link>
       <h1 className="main-title">{article.title}</h1>
       <HTMLRenderer html={article.content} />
     </Container>

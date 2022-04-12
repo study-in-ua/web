@@ -1,11 +1,12 @@
+import { Container } from "reactstrap";
+
 function AppError({ statusCode }) {
-  console.log("statusCode", statusCode);
   return (
-    <div className="uk-section">
-      <div className="uk-container uk-container-large">
+    <Container>
+      <h3>
         {statusCode ? `Помилка ${statusCode} на сервері` : "Помилка на клієнті"}
-      </div>
-    </div>
+      </h3>
+    </Container>
   );
 }
 

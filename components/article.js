@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import NextImage from "./image";
-import { ROUTE_ARTICLE } from "constants/router";
+import { ROUTE_ARTICLE, ROUTE_CATEGORY } from "constants/router";
 
 const Article = ({ article }) => {
   return (
@@ -20,7 +20,7 @@ const Article = ({ article }) => {
       </div>
       <div className="article-content">
         <div className="article-categories">
-          <Link href={`/category?id=${article.category.id}`}>
+          <Link href={`${ROUTE_CATEGORY}${article.category.id}`}>
             <a className="article-category">{article.category.name}</a>
           </Link>
         </div>

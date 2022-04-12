@@ -18,7 +18,7 @@ const CategoryNavigation = ({ categories }) => {
               <Link href={ROUTE_SCHEDULE}>
                 <a>
                   <CalendarIcon />
-                  Shedule
+                  Schedule
                 </a>
               </Link>
             </li>
