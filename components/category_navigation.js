@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import CalendarIcon from "../components/icons/Calendar";
 import { Container } from "reactstrap";
+import { ROUTE_CATEGORY, ROUTE_SCHEDULE } from "constants/router";
 
 const CategoryNavigation = ({ categories }) => {
   return (
@@ -14,10 +15,10 @@ const CategoryNavigation = ({ categories }) => {
 
           <ul className="uk-navbar-nav">
             <li>
-              <Link href="/shedule">
+              <Link href={ROUTE_SCHEDULE}>
                 <a>
                   <CalendarIcon />
-                  Shedule
+                  Schedule
                 </a>
               </Link>
             </li>
@@ -25,10 +26,11 @@ const CategoryNavigation = ({ categories }) => {
 
           <ul className="aside-nav">
             {categories.map((category) => {
+              const { id, name } = category;
               return (
-                <li key={category.id}>
-                  <Link href={`/category?id=${category.id}`}>
-                    <a className="uk-link-reset">{category.name}</a>
+                <li key={id}>
+                  <Link href={`${ROUTE_CATEGORY}/${id}`}>
+                    <a className="uk-link-reset">{name}</a>
                   </Link>
                 </li>
               );

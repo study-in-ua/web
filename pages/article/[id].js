@@ -1,7 +1,7 @@
-import { fetchAPI } from "../src/api";
 import HTMLRenderer from "react-html-renderer";
 import Link from "next/link";
 import { Container } from "reactstrap";
+import { fetchAPI } from "src/api";
 import { ROUTE_SCHEDULE } from "constants/router";
 
 const Article = ({ article }) => {
@@ -17,13 +17,17 @@ const Article = ({ article }) => {
 };
 
 export async function getServerSideProps({ query }) {
-  const attributeRes = await fetchAPI(`/articles/${query.id}`, ["*"]);
+  try {
+    const attributeRes = await fetchAPI(`/articles/${query.id}`, ["*"]);
 
-  return {
-    props: {
-      article: attributeRes.data,
-    },
-  };
+    return {
+      props: {
+        article: attributeRes.data,
+      },
+    };
+  } catch (e) {
+    return { notFound: true };
+  }
 }
 
 export default Article;

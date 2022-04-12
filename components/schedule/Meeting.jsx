@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import ClockIcon from "components/icons/Clock";
+import { ROUTE_ARTICLE } from "constants/router";
 
 const Meeting = ({ meeting }) => {
   return (
@@ -26,7 +27,7 @@ const Meeting = ({ meeting }) => {
               return (
                 <Link
                   key={article.articles_id.id}
-                  href={`/article?id=${article.articles_id.id}`}
+                  href={`${ROUTE_ARTICLE}/${article.articles_id.id}`}
                 >
                   <a>
                     {article.articles_id.category?.name && (
