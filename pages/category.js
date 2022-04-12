@@ -1,5 +1,5 @@
 import React from "react";
-import ArticleList from "../components/article_list";
+import ArticleList from "../components/articles/ArticleList";
 import { fetchAPI } from "../src/api";
 
 const Category = ({ articles }) => {

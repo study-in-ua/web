@@ -4,23 +4,25 @@ import NextImage from "./image";
 
 const Article = ({ article }) => {
   return (
-    <Link href={`/article?id=${article.id}`}>
-      <a className="uk-link-reset">
-        <div className="uk-card uk-card-muted">
-          <div className="uk-card-media-top">
-            <NextImage image={article.image} />
-          </div>
-          <div className="uk-card-body">
-            <p id="category" className="uk-text-uppercase">
-              {article.category.name}
-            </p>
-            <p id="title" className="uk-text-large">
-              {article.title}
-            </p>
-          </div>
+    <article className="article card">
+      <div className="article-image">
+        <Link href={`/article?id=${article.id}`}>
+          <a>
+            <NextImage image={article.image} width="400" height="258" layout="responsive" />
+          </a>
+        </Link>
+      </div>
+      <div className="article-content">
+        <div className="article-categories">
+          <Link href={`/category?id=${article.category.id}`}>
+            <a className="article-category">{article.category.name}</a>
+          </Link>
         </div>
-      </a>
-    </Link>
+        <Link href={`/article?id=${article.id}`}>
+          <a>{article.title}</a>
+        </Link>
+      </div>
+    </article>
   );
 };
 

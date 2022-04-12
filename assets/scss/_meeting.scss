@@ -1,0 +1,25 @@
+.meeting {
+  &-title {
+    font-size: 24px;
+    margin: 0 0 20px;
+  }
+
+  &-description {
+    color: $text_conetnt;
+    margin: 0 0 32px;
+  }
+
+  &-date {
+    font-size: 15px;
+    margin: 12px 0 14px;
+    display: flex;
+    align-items: center;
+
+    svg {
+      display: inline-block;
+      width: 16px;
+      opacity: 0.7;
+      margin: 0 5px 0 0;
+    }
+  }
+}
